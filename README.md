@@ -9,7 +9,7 @@ The Face Recognition Based Attendance System uses face recognition technology to
 - Automation of attendance tracking processes
 - Reduction of manual paperwork
 
-#Installations
+# Installations
 The installation process for this project is a bit more than usual. First we have to download a C++ compiler. We can do this by installing Visual Studios. You can download the community version for free from their website. Once the intaller we will run it and select the ‘Desktop development with C++’. The download and installation will take some time as it is a few Gbs.
 
 ![visualStudio-950x480](https://github.com/Darkwarrior247/Face-Recognition-Attendance-System/assets/103986226/44181d8e-a88a-4131-87ba-799efd88309a)
@@ -32,10 +32,10 @@ Face recognition is a series of several problems:
 3. Third, be able to pick out unique features of the face that you can use to tell it apart from other people— like how big the eyes are, how long the face is, etc.
 4. Finally, compare the unique features of that face to all the people you already know to determine the person’s name.
    
-#Attendance Project
+# Attendance Project
 Now using the methods we have seen above, we will develop an attendance system where the user is automatically logged when they are detected in the camera. We will store the name along with the time when they appeared.
 
-#Importing Images
+# Importing Images
 As we have imported before we can use the same face_recognition.load_image_file() function to import our images. But when we have multiple images, importing them individually can become messy. Therefore we will write a script to import all images in a given folder at once. For this we will need the os library so we will import that first. We will store all the images in one list and their names in another.
 
 import face_recognition
@@ -52,7 +52,7 @@ for x,cl in enumerate(myList):
         images.append(curImg)
         className.append(os.path.splitext(cl)[0])
 
-#Compute Encodings
+# Compute Encodings
 Now that we have a list of images we can iterate through those and create a corresponding encoded list for known faces. To do this we will create a function. As earlier we will first convert it into RGB and then find its encoding using the face_encodings() function. Then we will append each encoding to our list.
 
 def findEncodings(images):
@@ -67,7 +67,7 @@ Now we can simply call this function with the images list as the input arguments
 encodeListKnown = findEncodings(images)
 print('Encodings Complete')
 
-#The While loop
+# The While loop
 The while loop is created to run the webcam. But before the while loop we have to create a video capture object so that we can grab frames from the webcam.
 
 cap = cv2.VideoCapture(0)
@@ -80,13 +80,13 @@ while True:
     imgS = cv2.resize(img, (0, 0), fx=0.25, fy=0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
     
-#Webcam Encodings
+# Webcam Encodings
 Once we have the webcam frame we will find all the faces in our image. The face_locations function is used for this purpose. Later we will find the face_encodings as well.
 
 facesCurFrame = face_recognition.face_locations(imgS)
 encodesCurFrame = face_recognition.face_encodings(imgS, facesCurFrame)
 
-#Find Matches
+# Find Matches
 Now we can match the current face encodings to our known faces encoding list to find the matches. We will also compute the distance. This is done to find the best match in case more than one face is detected at a time.
 
 for encodeFace,faceLoc in zip(encodesCurFrame,facesCurFrame):
@@ -105,7 +105,7 @@ if matches[matchIndex]:
     cv2.rectangle(img, (x1, y2 - 35), (x2, y2), (0, 255, 0), cv2.FILLED)
     cv2.putText(img, name, (x1 + 6, y2 - 6), cv2.FONT_HERSHEY_DUPLEX, 1.0, (255, 255, 255), 1)
     
-#Marking Attendance
+# Marking Attendance
 Lastly we are going to add the automated attendance code. We will start by writing a function that requires only one input which is the name of the user. First we open our Attendance file which is in csv format. Then we read all the lines and iterate through each line using a for loop. Next we can split using comma ‘,’. This will allow us to get the first element which is the name of the user. If the user in the camera already has an entry in the file then nothing will happen. On the other hand if the user is new then the name of the user along with the current time stamp will be stored. We can use the datetime class in the date time package to get the current time.
 
 def markAttendance(name):
@@ -120,7 +120,7 @@ def markAttendance(name):
             dt_string = now.strftime("%H:%M:%S")
             f.writelines(f'n{name},{dt_string}')
 
-#Labeling Unknown faces as well
+# Labeling Unknown faces as well
 To find the unknown faces we will replace
 
 if matches[matchIndex]:
