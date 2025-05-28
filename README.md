@@ -28,7 +28,12 @@ The installation process for this project is a bit more than usual. First we hav
 ![visualStudio-950x480](https://github.com/Darkwarrior247/Face-Recognition-Attendance-System/assets/103986226/44181d8e-a88a-4131-87ba-799efd88309a)
 
 After completing and restarting the computer, now we will head on to our Pycharm project. Here we will install the required packages. Below is the list.
-
+**Clone the repository**
+```bash
+   git clone https://github.com/Darkwarrior247/Face-Recognition-Attendance-System.git
+   cd Face-Recognition-Attendance-System
+   ```
+**Install Python dependencies**
 ```bash
    pip opencv-python numpy face_recognition dlib face_recognition --only-binary :all: cmake cmake
 ```
