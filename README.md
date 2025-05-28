@@ -10,7 +10,7 @@ The Face Recognition Based Attendance System uses face recognition technology to
 - Reduction of manual paperwork
 
 # Installations
-## Prerequisites
+### Prerequisites
 - Python 3.6+
 - Visual Studio Build Tools with C++
 - CMake
