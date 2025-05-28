@@ -163,3 +163,20 @@ cv2.rectangle(img,(x1,y1),(x2,y2),(0,255,0),2)
 cv2.rectangle(img,(x1,y2-35),(x2,y2),(0,255,0),cv2.FILLED)
 cv2.putText(img,name,(x1+6,y2-6),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,255),2)
 All this does is to check if the distance to our min face is less than 0.5 or not. If its not then this means the person is unknown so we change the name to unknown and don’t mark the attendance.
+
+# Troubleshooting
+
+### Common Issues
+1. **Camera not detected**
+   - Check camera connections
+   - Verify camera permissions
+
+2. **Recognition issues**
+   - Ensure good lighting
+   - Update reference photos
+   - Adjust recognition threshold
+
+3. **Performance issues**
+   - Increase frame skip value
+   - Check system resources
+   - Update hardware drivers
