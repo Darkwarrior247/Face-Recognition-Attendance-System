@@ -16,11 +16,9 @@ The installation process for this project is a bit more than usual. First we hav
 
 After completing and restarting the computer, now we will head on to our Pycharm project. Here we will install the required packages. Below is the list.
 
-cmake
-dlib
-face_recognition
-numpy
-opencv-python
+```bash
+   pip opencv-python numpy face_recognition dlib face_recognition --only-binary :all: cmake cmake
+```
 
 #Understanding the problem
 Although many face recognition algorithms have been developed over the years, their speed and accuracy balance has not been quiet optimal . But some recent advancements have shown promise. A good example is Facebook, where they are able to tag you and your friends with just a few images of training and with accuracy as high as 98%. So how does this work . Today we will try to replicate similar results using a face recognition library developed by Adam Geitgey. Lets look at the 4 problems he explained in his article.
