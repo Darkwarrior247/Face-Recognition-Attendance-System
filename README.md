@@ -17,6 +17,12 @@ The Face Recognition Based Attendance System uses face recognition technology to
 - Webcam (720p minimum)
 - 4GB+ RAM
 
+### Installation
+1. **Install Visual Studio Build Tools**
+   - Download Visual Studio Community Edition
+   - Select "Desktop Development with C++"
+   - Complete installation and restart
+
 The installation process for this project is a bit more than usual. First we have to download a C++ compiler. We can do this by installing Visual Studios. You can download the community version for free from their website. Once the intaller we will run it and select the ‘Desktop development with C++’. The download and installation will take some time as it is a few Gbs.
 
 ![visualStudio-950x480](https://github.com/Darkwarrior247/Face-Recognition-Attendance-System/assets/103986226/44181d8e-a88a-4131-87ba-799efd88309a)
