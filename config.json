@@ -1,0 +1,11 @@
+{
+    "frame_skip": 2,
+    "face_recognition_threshold": 0.50,
+    "attendance_file": "attendance.csv",
+    "ui": {
+        "analyzing_text": "Analyzing...",
+        "welcome_text": "Welcome,",
+        "unknown_text": "Unknown Person",
+        "display_time": 3
+    }
+}
