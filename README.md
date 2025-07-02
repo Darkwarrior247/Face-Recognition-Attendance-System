@@ -236,5 +236,3 @@ Use `add_attendees.py` to add new people to the system. This script captures a f
 ## 📜 License
 
 This project is for educational and personal use.  
-
----
